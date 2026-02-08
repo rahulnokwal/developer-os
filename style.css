@@ -1,6 +1,7 @@
 :root {
-  --glass-bg: rgba(255, 255, 255, 0.03);
-  --glass-border: rgba(255, 255, 255, 0.449);
+  --glass-bg: #ffffff08;
+  --glass-border: #ffffff72;
+  --glass-head: #767785;
   --text-main: #f8fafc;
   --text-muted: #94a3b8;
   --text-accent: #38bdf8;
@@ -62,7 +63,10 @@ body {
 .nav img {
   height: 50px;
 }
-.app {
+.nav-hide {
+  display: none;
+}
+.appIcon {
   position: relative;
   bottom: 0;
   display: flex;
@@ -77,14 +81,6 @@ body {
   font-size: 12px;
   color: azure;
 }
-.app:hover {
-  bottom: 5px;
-  scale: 1.2;
-  margin: 0 5px;
-}
-.app:hover .title {
-  display: inline;
-}
 
 .desktop {
   position: relative;
@@ -97,15 +93,18 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0.8);
   border-radius: 10px;
   border: 1px solid var(--glass-border);
+  opacity: 0;
+  visibility: hidden;
+  border-radius: 10px;
+  background-color: var(--glass-head);
+  backdrop-filter: blur(10px);
 }
 .window-header {
   height: 30px;
   width: 100%;
-  background-color: #ffffff2c;
-  backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
   border-top-left-radius: 10px;
@@ -129,13 +128,13 @@ body {
 .btn img {
   height: 12px;
 }
-#close {
+.close {
   background-color: #ff5c5f;
 }
-#minimize {
+.minimize {
   background-color: #fac800;
 }
-#maximize {
+.maximize {
   background-color: #34c759;
 }
 
@@ -144,4 +143,5 @@ body {
   padding: 20px;
   overflow-y: scroll;
   background-color: antiquewhite;
+  border-radius: 10px;
 }
