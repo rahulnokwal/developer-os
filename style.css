@@ -1,3 +1,11 @@
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.449);
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-accent: #38bdf8;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -20,7 +28,6 @@ body {
     radial-gradient(at 100% 100%, rgba(37, 99, 235, 0.15) 0px, transparent 50%),
     radial-gradient(at 0% 100%, rgba(219, 39, 119, 0.1) 0px, transparent 50%);
   padding: 10px;
-  position: relative;
   font-family:
     system-ui,
     -apple-system,
@@ -36,14 +43,15 @@ body {
 }
 .nav {
   position: absolute;
+  z-index: 999;
   bottom: 10px;
   left: 50%;
   transform: translate(-50%);
   height: 60px;
   background-color: transparent;
   border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--glass-border);
+  background-color: var(--glass-bg);
   backdrop-filter: (16px);
   display: flex;
   align-items: end;
@@ -63,7 +71,7 @@ body {
 }
 .title {
   position: absolute;
-  top: -40%;
+  top: -50%;
   white-space: nowrap;
   display: none;
   font-size: 12px;
@@ -76,4 +84,64 @@ body {
 }
 .app:hover .title {
   display: inline;
+}
+
+.desktop {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.desktop-window {
+  width: 600px;
+  height: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  border: 1px solid var(--glass-border);
+}
+.window-header {
+  height: 30px;
+  width: 100%;
+  background-color: #ffffff2c;
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.manage-btn {
+  display: flex;
+  gap: 10px;
+  padding-left: 10px;
+}
+.btn {
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn img {
+  height: 12px;
+}
+#close {
+  background-color: #ff5c5f;
+}
+#minimize {
+  background-color: #fac800;
+}
+#maximize {
+  background-color: #34c759;
+}
+
+.window-body {
+  height: calc(100% - 30px);
+  padding: 20px;
+  overflow-y: scroll;
+  background-color: antiquewhite;
 }
