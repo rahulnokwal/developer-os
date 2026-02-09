@@ -2,9 +2,6 @@
   --glass-bg: #ffffff08;
   --glass-border: #ffffff72;
   --glass-head: #767785;
-  --text-main: #f8fafc;
-  --text-muted: #94a3b8;
-  --text-accent: #38bdf8;
 }
 
 * {
@@ -101,6 +98,15 @@ body {
   border-radius: 10px;
   background-color: var(--glass-head);
   backdrop-filter: blur(10px);
+}
+#about-window {
+  z-index: 1;
+}
+#project-window {
+  z-index: 1;
+}
+#skills-window {
+  z-index: 1;
 }
 .window-header {
   height: 30px;
