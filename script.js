@@ -1,3 +1,34 @@
+// boot animation
+const desktop_boot = document.querySelector(".desktop-boot");
+const logo = document.querySelector(".logo");
+const name = document.querySelector(".os-name");
+var tl = gsap.timeline();
+
+const sound = new Audio("./assest/mac_performa_5200.mp3");
+
+const play = () => {
+  sound.currentTime = 0;
+  sound.play();
+};
+
+tl.to(logo, {
+  delay: 1,
+  duration: 1,
+  opacity: 1,
+});
+// tl.add(play, "-=0.5");
+tl.to(name, {
+  opacity: 1,
+  duration: 3,
+  scale: 1,
+  ease: "back.out(1.7)",
+});
+tl.to(desktop_boot, {
+  duration: 0.7,
+  opacity: 0,
+  zIndex: -1,
+});
+
 // opening the tabs
 const navbar = document.querySelector(".nav");
 const appIcon = document.querySelectorAll(".appIcon");
