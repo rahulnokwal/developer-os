@@ -1,11 +1,15 @@
 // opening the tabs
+const navbar = document.querySelector(".nav");
 const appIcon = document.querySelectorAll(".appIcon");
 
-appIcon.forEach((icon, index) => {
+appIcon.forEach((icon) => {
   icon.addEventListener("click", () => {
     const targetId = icon.getAttribute("data-target");
     const targetWindowOpen = document.getElementById(targetId);
-
+    if (targetWindowOpen.style.height === "100%") {
+      navbar.classList.add("nav-hide");
+    }
+    icon.classList.remove("border");
     if (targetWindowOpen) {
       gsap.to(targetWindowOpen, {
         scale: 1,
@@ -14,11 +18,9 @@ appIcon.forEach((icon, index) => {
         ease: "back.out(1.7)",
       });
     }
-    icon.addEventListener("click", () => {
-      bringToFront(targetWindowOpen);
-    });
+    bringToFront(targetWindowOpen);
   });
-  const title = document.querySelectorAll(".title");
+  const title = icon.querySelector(".title");
   icon.addEventListener("mouseenter", () => {
     gsap.to(icon, {
       scale: 1.2,
@@ -26,7 +28,7 @@ appIcon.forEach((icon, index) => {
       ease: "back.out(2)",
       y: -10,
     });
-    title[index].style.display = "inline";
+    title.style.display = "inline";
   });
   icon.addEventListener("mouseleave", () => {
     gsap.to(icon, {
@@ -35,12 +37,11 @@ appIcon.forEach((icon, index) => {
       ease: "back.out(2)",
       y: 0,
     });
-    title[index].style.display = "none";
+    title.style.display = "none";
   });
 });
 
 //closing the tabs
-const navbar = document.querySelector(".nav");
 const close = document.querySelectorAll(".close");
 close.forEach((btn) => {
   btn.addEventListener("click", () => {
@@ -50,9 +51,6 @@ close.forEach((btn) => {
       autoAlpha: 0,
       duration: 0.3,
       ease: "power5.out",
-    });
-    gsap.to(navbar, {
-      delay: 2,
     });
     navbar.classList.remove("nav-hide");
   });
@@ -90,19 +88,26 @@ maximize.forEach((btn) => {
 
 //minimize the tab
 
-// const minimize = document.querySelectorAll(".minimize");
-// minimize.forEach((btn) => {
-//   btn.addEventListener("click", () => {
-//     var targetWindow = btn.closest(".desktop-window");
-//     gsap.to(targetWindow, {
-//       height: "400px",
-//       width: "600px",
-//       duration: 0.5,
-//       ease: "power5.out",
-//     });
-//     navbar.classList.remove("nav-hide");
-//   });
-// });
+const minimize = document.querySelectorAll(".minimize");
+minimize.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const targetWindow = btn.closest(".desktop-window");
+    gsap.to(targetWindow, {
+      duration: 0.5,
+      ease: "power2.in",
+      autoAlpha: 0,
+    });
+    const targetId = targetWindow.getAttribute("id");
+    appIcon.forEach((icon) => {
+      const targetIcon = icon.getAttribute("data-target");
+      if (targetIcon == targetId) {
+        icon.classList.add("border");
+      }
+    });
+    navbar.classList.remove("nav-hide");
+  });
+});
 
 const desktop = document.querySelector(".desktop");
 const windows = document.querySelectorAll(".desktop-window");
@@ -112,7 +117,6 @@ function bringToFront(win) {
   zIdx++;
   win.style.zIndex = zIdx;
 }
-
 windows.forEach((win) => {
   const windows_header = win.querySelector(".window-header");
   Draggable.create(win, {

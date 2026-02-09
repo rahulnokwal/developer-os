@@ -1,7 +1,7 @@
 :root {
   --glass-bg: #ffffff08;
   --glass-border: #ffffff72;
-  --glass-head: #767785;
+  --glass-head: #ffffff93;
 }
 
 * {
@@ -69,6 +69,9 @@ body {
   display: flex;
   justify-content: center;
   transition: bottom 0.2s ease;
+}
+.border {
+  border-bottom: 2px solid white;
 }
 .title {
   position: absolute;
