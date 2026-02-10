@@ -1,22 +1,31 @@
 // boot animation
+const startbtn = document.querySelector(".startbtn");
 const desktop_boot = document.querySelector(".desktop-boot");
 const logo = document.querySelector(".logo");
 const name = document.querySelector(".os-name");
 var tl = gsap.timeline();
-
 const sound = new Audio("./assest/mac_performa_5200.mp3");
-
 const play = () => {
   sound.currentTime = 0;
   sound.play();
 };
 
+tl.pause();
+startbtn.addEventListener("click", () => {
+  console.log("click");
+  gsap.to(startbtn, {
+    opacity: 0,
+    duration: 0.7,
+    zIndex: -1,
+  });
+  tl.play();
+});
 tl.to(logo, {
   delay: 1,
   duration: 1,
   opacity: 1,
 });
-// tl.add(play, "-=0.5");
+tl.add(play, "-=0.5");
 tl.to(name, {
   opacity: 1,
   duration: 3,
@@ -162,4 +171,16 @@ windows.forEach((win) => {
   win.addEventListener("click", () => {
     bringToFront(win);
   });
+});
+
+// about tech stack animation
+
+const tl1 = gsap.timeline();
+tl1.to(".tech-img", {
+  duration: 0.8,
+  yoyo: true,
+  scale: 1.2,
+  stagger: 0.2,
+  repeat: -1,
+  ease: "power1.inOut",
 });
