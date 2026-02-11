@@ -1,42 +1,42 @@
 // boot animation
-const startbtn = document.querySelector(".startbtn");
-const desktop_boot = document.querySelector(".desktop-boot");
-const logo = document.querySelector(".logo");
-const name = document.querySelector(".os-name");
-var tl = gsap.timeline();
-const sound = new Audio("./assest/mac_performa_5200.mp3");
-const play = () => {
-  sound.currentTime = 0;
-  sound.play();
-};
+// const startbtn = document.querySelector(".startbtn");
+// const desktop_boot = document.querySelector(".desktop-boot");
+// const logo = document.querySelector(".logo");
+// const name = document.querySelector(".os-name");
+// var tl = gsap.timeline();
+// const sound = new Audio("./assest/mac_performa_5200.mp3");
+// const play = () => {
+//   sound.currentTime = 0;
+//   sound.play();
+// };
 
-tl.pause();
-startbtn.addEventListener("click", () => {
-  console.log("click");
-  gsap.to(startbtn, {
-    opacity: 0,
-    duration: 0.7,
-    zIndex: -1,
-  });
-  tl.play();
-});
-tl.to(logo, {
-  delay: 1,
-  duration: 1,
-  opacity: 1,
-});
-tl.add(play, "-=0.5");
-tl.to(name, {
-  opacity: 1,
-  duration: 3,
-  scale: 1,
-  ease: "back.out(1.7)",
-});
-tl.to(desktop_boot, {
-  duration: 0.7,
-  opacity: 0,
-  zIndex: -1,
-});
+// tl.pause();
+// startbtn.addEventListener("click", () => {
+//   console.log("click");
+//   gsap.to(startbtn, {
+//     opacity: 0,
+//     duration: 0.7,
+//     zIndex: -1,
+//   });
+//   tl.play();
+// });
+// tl.to(logo, {
+//   delay: 1,
+//   duration: 1,
+//   opacity: 1,
+// });
+// tl.add(play, "-=0.5");
+// tl.to(name, {
+//   opacity: 1,
+//   duration: 3,
+//   scale: 1,
+//   ease: "back.out(1.7)",
+// });
+// tl.to(desktop_boot, {
+//   duration: 0.7,
+//   opacity: 0,
+//   zIndex: -1,
+// });
 
 // opening the tabs
 const navbar = document.querySelector(".nav");
