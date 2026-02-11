@@ -49,6 +49,7 @@ appIcon.forEach((icon) => {
     if (targetWindowOpen.style.height === "100%") {
       navbar.classList.add("nav-hide");
     }
+
     icon.classList.remove("border");
     if (targetWindowOpen) {
       gsap.to(targetWindowOpen, {
@@ -102,6 +103,7 @@ const maximize = document.querySelectorAll(".maximize");
 maximize.forEach((btn) => {
   btn.addEventListener("click", () => {
     var targetWindow = btn.closest(".desktop-window");
+    let smallerWindow = document.querySelector(".smaller-window");
     if (targetWindow.style.height !== "100%") {
       gsap.to(targetWindow, {
         x: 0,
@@ -111,7 +113,10 @@ maximize.forEach((btn) => {
         duration: 0.5,
         ease: "power3.inOut",
       });
-      navbar.classList.add("nav-hide");
+      setTimeout(() => {
+        navbar.classList.add("nav-hide");
+        smallerWindow.classList.add("smaller-window-hide");
+      }, 700);
     } else {
       gsap.to(targetWindow, {
         x: 0,
@@ -121,13 +126,12 @@ maximize.forEach((btn) => {
         duration: 0.5,
         ease: "power4.inOut",
       });
+      smallerWindow.classList.remove("smaller-window-hide");
       navbar.classList.remove("nav-hide");
     }
   });
 });
-
 //minimize the tab
-
 const minimize = document.querySelectorAll(".minimize");
 minimize.forEach((btn) => {
   btn.addEventListener("click", (e) => {
@@ -183,4 +187,16 @@ tl1.to(".tech-img", {
   stagger: 0.2,
   repeat: -1,
   ease: "power1.inOut",
+});
+
+// resume bnt
+
+const resumewindow = document.querySelector(".resume-window");
+const resumebtn = document.querySelector(".cv-btn");
+const crossbtn = document.querySelector(".cross-resume");
+resumebtn.addEventListener("click", () => {
+  resumewindow.classList.remove("resume-hide");
+});
+crossbtn.addEventListener("click", () => {
+  resumewindow.classList.add("resume-hide");
 });

@@ -209,7 +209,25 @@ body {
 .maximize {
   background-color: var(--status-green);
 }
-
+.smaller-window {
+  height: calc(100% - 30px);
+  width: 100%;
+  position: fixed;
+  background-color: var(--bg-app);
+  display: inline;
+  z-index: 9999;
+}
+.smaller-window h1 {
+  background: -webkit-linear-gradient(145deg, #38bdf8, #fbbf24);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  margin-top: 150px;
+}
+.smaller-window-hide {
+  display: none;
+  z-index: -1;
+}
 .about-body {
   position: relative;
   height: calc(100% - 30px);
@@ -315,32 +333,35 @@ body {
   border-radius: 10px;
 }
 
-/* .resume-window {
+.resume-window {
   height: 100%;
   width: 100%;
- background-color: #38bdf8; 
   position: fixed;
-  z-index: 9999999999;
+  z-index: 999;
 }
-.resume-header {
-  height: 50px;
-  background-color: var(--bg-nav);
-  display: flex;
-  justify-content: flex-end;
+.resume-hide {
+  display: none;
+  z-index: 0;
 }
 .cross-resume {
+  position: absolute;
   height: 50px;
   width: 50px;
+  right: 5px;
+  top: 2px;
+  background-color: #3a3a3a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
 }
 .cross-resume img {
   height: 20px;
+  filter: invert(100%);
 }
-
 .resume-body {
-  height: calc(100% - 50px);
-  background-color: #1053bfb3;
-} */
-
+  height: 100%;
+}
 .social-profiles {
   grid-column: span 2;
   scroll-snap-align: start;
@@ -349,6 +370,7 @@ body {
   grid-template-rows: repeat(3, 150px);
   gap: 40px;
   padding: 100px 150px;
+  overflow: hidden;
 }
 .social-head {
   grid-column: span 3;
@@ -426,6 +448,7 @@ body {
 }
 .subtitle :nth-child(3) {
   color: var(--text-muted);
+  text-decoration: none;
   margin-top: auto;
 }
 
@@ -525,8 +548,8 @@ body {
 }
 .contact-form button:hover {
   background: -webkit-linear-gradient(145deg, #38bff860, #fbbe247b);
-  scale: 1.05;
-  margin-left: 10px;
+  scale: 1.1;
+  margin-left: 2px;
 }
 .footer {
   margin-top: 50px;
