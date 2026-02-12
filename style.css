@@ -620,7 +620,7 @@ body {
   height: calc(100% - 30px);
   width: 100%;
   border-radius: 10px;
-  background-color: var(--bg-app);
+  background-color: var(--bg-card);
   color: var(--text-main);
   display: flex;
   align-items: center;
@@ -633,8 +633,8 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 25% 70%;
-  gap: 20px;
-  padding: 150px;
+  gap: 30px;
+  padding: 170px;
 }
 
 .project-head {
@@ -657,14 +657,18 @@ body {
 
 .project-cards {
   border-radius: 20px;
-  background-color: var(--bg-card);
+  background-color: var(--bg-card2);
   scale: 1;
   transition: all 2s ease;
   position: relative;
   overflow: hidden;
-  
+  box-shadow: 10px 10px 20px var(--bg-off);
+  padding-bottom: 20px;
+  scale: 1;
 }
-
+.project-cards:hover {
+  scale: 1.02;
+}
 .project-info {
   color: var(--text-main);
   font-size: 24px;
@@ -681,31 +685,42 @@ body {
   width: 100%;
   object-position: center;
   object-fit: cover;
-} 
-.hover{
-  padding:10px 20px;
+}
+.hover {
+  padding: 12px 20px;
   font-size: 12px;
   color: var(--text-muted);
 }
-.project-desc{
+.project-desc {
   height: 80%;
-  position: absolute;
-  top: 100%;
+  position: relative;
   border-radius: 20px;
-  padding:30px;
+  padding: 0 30px;
   font-size: 14px;
   background-color: var(--bg-card);
   color: var(--text-main);
   line-height: 18px;
 }
-.project-cards:hover .project-desc{
-  top: 20%;
-}
-.project-cards:hover .project-pic,.project-cards:hover .hover {
-  display: none; 
-} 
 
-.project-desc :nth-child(2){
+.project-cards:hover .project-pic,
+.project-cards:hover .hover {
+  display: none;
+}
+.project-desc :nth-last-child(1) p {
   color: var(--text-highlight);
-  margin-top: 10px;
+}
+.para-container {
+  overflow: hidden;
+  height: 20px;
+}
+
+.para-container p {
+  line-height: 20px;
+  width: 100%;
+  transform: translateY(20px);
+  transition: all 0.7s ease;
+}
+
+.project-cards:hover .para-container p {
+  transform: translateY(0px);
 }
