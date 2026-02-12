@@ -100,10 +100,10 @@ close.forEach((btn) => {
 // maximize the tab
 
 const maximize = document.querySelectorAll(".maximize");
-maximize.forEach((btn) => {
+maximize.forEach((btn, index) => {
   btn.addEventListener("click", () => {
     var targetWindow = btn.closest(".desktop-window");
-    let smallerWindow = document.querySelector(".smaller-window");
+    var smallWindow = document.querySelectorAll(".smaller-window");
     if (targetWindow.style.height !== "100%") {
       gsap.to(targetWindow, {
         x: 0,
@@ -113,10 +113,10 @@ maximize.forEach((btn) => {
         duration: 0.5,
         ease: "power3.inOut",
       });
+      navbar.classList.add("nav-hide");
       setTimeout(() => {
-        navbar.classList.add("nav-hide");
-        smallerWindow.classList.add("smaller-window-hide");
-      }, 700);
+        smallWindow[index].classList.add("smaller-window-hide");
+      }, 100);
     } else {
       gsap.to(targetWindow, {
         x: 0,
@@ -126,7 +126,7 @@ maximize.forEach((btn) => {
         duration: 0.5,
         ease: "power4.inOut",
       });
-      smallerWindow.classList.remove("smaller-window-hide");
+      smallWindow[index].classList.remove("smaller-window-hide");
       navbar.classList.remove("nav-hide");
     }
   });

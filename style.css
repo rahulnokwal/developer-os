@@ -28,11 +28,13 @@ body {
   width: 100%;
   height: 100%;
 }
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: var(--bg-app);
   user-select: none;
 }
+
 /* .desktop-boot {
   position: relative;
   height: 100%;
@@ -116,12 +118,15 @@ body {
   gap: 20px;
   padding: 5px 20px;
 }
+
 .nav img {
   height: 50px;
 }
+
 .nav-hide {
   display: none;
 }
+
 .appIcon {
   position: relative;
   bottom: 0;
@@ -129,9 +134,11 @@ body {
   justify-content: center;
   transition: bottom 0.2s ease;
 }
+
 .border {
   border-bottom: 2px solid var(--border-subtle);
 }
+
 .title {
   position: absolute;
   top: -50%;
@@ -147,6 +154,7 @@ body {
   width: 100%;
   overflow: hidden;
 }
+
 .desktop-window {
   width: 600px;
   height: 400px;
@@ -163,15 +171,19 @@ body {
   backdrop-filter: blur(10px);
   overflow: hidden;
 }
+
 #about-window {
   z-index: 1;
 }
+
 #project-window {
   z-index: 1;
 }
+
 #skills-window {
   z-index: 1;
 }
+
 .window-header {
   height: 30px;
   width: 100%;
@@ -197,26 +209,32 @@ body {
   justify-content: center;
   cursor: pointer;
 }
+
 .btn img {
   height: 12px;
 }
+
 .close {
   background-color: var(--status-red);
 }
+
 .minimize {
   background-color: var(--status-yellow);
 }
+
 .maximize {
   background-color: var(--status-green);
 }
+
 .smaller-window {
   height: calc(100% - 30px);
   width: 100%;
   position: fixed;
   background-color: var(--bg-app);
   display: inline;
-  z-index: 9999;
+  z-index: 99999;
 }
+
 .smaller-window h1 {
   background: -webkit-linear-gradient(145deg, #38bdf8, #fbbf24);
   background-clip: text;
@@ -224,10 +242,12 @@ body {
   text-align: center;
   margin-top: 150px;
 }
+
 .smaller-window-hide {
   display: none;
   z-index: -1;
 }
+
 .about-body {
   position: relative;
   height: calc(100% - 30px);
@@ -252,22 +272,26 @@ body {
   justify-content: center;
   scroll-snap-align: start;
 }
+
 .greetings {
   font-size: 100px;
   color: var(--text-main);
 }
+
 .profession {
   font-size: 46px;
   background: -webkit-linear-gradient(145deg, #38bdf8, #fbbf24);
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 .tile {
   margin-top: 30px;
   font-size: 18px;
   line-height: 35px;
   color: var(--text-dark);
 }
+
 .cv-btn {
   padding: 7px 10px;
   border-radius: 5px;
@@ -277,18 +301,22 @@ body {
   color: var(--text-main);
   transition: all 2s ease;
 }
+
 .cv-btn:hover {
   margin-left: 5px;
   scale: 1.2;
   background-color: var(--border-subtle);
 }
+
 .profile {
   scroll-snap-align: start;
   overflow: hidden;
 }
+
 .profile img {
   height: 100%;
 }
+
 .about-more {
   scroll-snap-align: start;
   background-color: var(--bg-app);
@@ -299,17 +327,20 @@ body {
   flex-direction: column;
   padding: 20px;
 }
+
 .about-more h1 {
   background: -webkit-linear-gradient(145deg, #38bdf8, #fbbf24);
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 .about-more p {
   width: 70%;
   text-align: center;
   line-height: 30px;
   color: var(--text-dark);
 }
+
 .tech-stack {
   height: 10%;
   width: 40%;
@@ -318,6 +349,7 @@ body {
   justify-content: center;
   gap: 20px;
 }
+
 .tech {
   height: 70px;
   width: 70px;
@@ -339,10 +371,12 @@ body {
   position: fixed;
   z-index: 999;
 }
+
 .resume-hide {
   display: none;
   z-index: 0;
 }
+
 .cross-resume {
   position: absolute;
   height: 50px;
@@ -355,13 +389,16 @@ body {
   justify-content: center;
   z-index: 9999;
 }
+
 .cross-resume img {
   height: 20px;
   filter: invert(100%);
 }
+
 .resume-body {
   height: 100%;
 }
+
 .social-profiles {
   grid-column: span 2;
   scroll-snap-align: start;
@@ -372,6 +409,7 @@ body {
   padding: 100px 150px;
   overflow: hidden;
 }
+
 .social-head {
   grid-column: span 3;
   display: flex;
@@ -380,14 +418,17 @@ body {
   flex-direction: column;
   gap: 20px;
 }
+
 .social-head h1 {
   background: -webkit-linear-gradient(145deg, #38bdf8, #fbbf24);
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 .social-head p {
   color: var(--text-dark);
 }
+
 .profile-cards {
   grid-row: span 2;
   border-radius: 20px;
@@ -402,6 +443,7 @@ body {
   scale: 1.05;
   transform: translateY(-5px);
 }
+
 .platform-logo {
   height: 60px;
   width: 100%;
@@ -411,6 +453,7 @@ body {
   gap: 20px;
   border-radius: 10px;
 }
+
 .platform-logo img {
   height: 70px;
   width: 70px;
@@ -422,30 +465,36 @@ body {
   color: #ffa116;
   font-size: 30px;
 }
+
 .platform-github {
   color: #2dba4e;
   font-size: 30px;
 }
+
 .platform-linkedin {
   color: #0077b5;
   font-size: 30px;
 }
+
 .subtitle {
   height: 70%;
   margin-top: 30px;
   display: flex;
   flex-direction: column;
 }
+
 .subtitle :nth-child(1) {
   color: var(--text-main);
   font-size: 22px;
   margin-bottom: 10px;
 }
+
 .subtitle :nth-child(2) {
   color: var(--text-dark);
   line-height: 25px;
   margin-bottom: 10px;
 }
+
 .subtitle :nth-child(3) {
   color: var(--text-muted);
   text-decoration: none;
@@ -458,12 +507,14 @@ body {
   background-color: var(--bg-app);
   padding: 150px 150px 0 150px;
 }
+
 .contact h1 {
   background: -webkit-linear-gradient(90deg, #38bdf8, #fbbf24);
   background-clip: text;
   -webkit-text-fill-color: transparent;
   text-align: center;
 }
+
 .contact-body {
   display: flex;
   gap: 10px;
@@ -480,6 +531,7 @@ body {
   color: var(--text-highlight);
   margin-bottom: 20px;
 }
+
 .contact-info p:nth-last-of-type(1) {
   font-size: 16px;
   color: var(--text-dark);
@@ -487,6 +539,7 @@ body {
   line-height: 25px;
   width: 90%;
 }
+
 .phone,
 .mail {
   display: flex;
@@ -500,11 +553,13 @@ body {
   width: 20px;
   filter: invert(100%);
 }
+
 .phone img {
   height: 25px;
   width: 25px;
   filter: invert(100%);
 }
+
 .phone a,
 .mail a {
   text-decoration: none;
@@ -512,6 +567,7 @@ body {
   color: var(--text-main);
   font-size: 14px;
 }
+
 .contact-form {
   width: 50%;
   padding: 5%;
@@ -533,9 +589,11 @@ body {
   background-color: #ffffff0f;
   color: var(--text-dark);
 }
+
 .contact-form textarea {
   resize: none;
 }
+
 .contact-form button {
   background: -webkit-linear-gradient(145deg, #38bff82f, #fbbe246e);
   border: 1px solid var(--border-subtle);
@@ -546,12 +604,108 @@ body {
   margin-top: 10px;
   transition: all 2s ease;
 }
+
 .contact-form button:hover {
   background: -webkit-linear-gradient(145deg, #38bff860, #fbbe247b);
   scale: 1.1;
   margin-left: 2px;
 }
+
 .footer {
   margin-top: 50px;
   text-align: center;
+}
+
+.project-body {
+  height: calc(100% - 30px);
+  width: 100%;
+  border-radius: 10px;
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.projects {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 25% 70%;
+  gap: 20px;
+  padding: 150px;
+}
+
+.project-head {
+  grid-column: span 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: var(--text-dark);
+  padding: 0px 150px;
+  overflow: hidden;
+}
+
+.project-head h1 {
+  background: -webkit-linear-gradient(145deg, #38bdf8, #fbbf24);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+}
+
+.project-cards {
+  border-radius: 20px;
+  background-color: var(--bg-card);
+  scale: 1;
+  transition: all 2s ease;
+  position: relative;
+  overflow: hidden;
+  
+}
+
+.project-info {
+  color: var(--text-main);
+  font-size: 24px;
+  padding: 20px;
+}
+
+.project-pic {
+  height: 70%;
+  width: 100%;
+}
+
+.project-cards img {
+  height: 100%;
+  width: 100%;
+  object-position: center;
+  object-fit: cover;
+} 
+.hover{
+  padding:10px 20px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.project-desc{
+  height: 80%;
+  position: absolute;
+  top: 100%;
+  border-radius: 20px;
+  padding:30px;
+  font-size: 14px;
+  background-color: var(--bg-card);
+  color: var(--text-main);
+  line-height: 18px;
+}
+.project-cards:hover .project-desc{
+  top: 20%;
+}
+.project-cards:hover .project-pic,.project-cards:hover .hover {
+  display: none; 
+} 
+
+.project-desc :nth-child(2){
+  color: var(--text-highlight);
+  margin-top: 10px;
 }
