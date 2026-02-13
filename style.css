@@ -702,6 +702,9 @@ body {
   color: var(--text-main);
   font-size: 24px;
   padding: 20px;
+  white-space: nowrap;
+  overflow: scroll;
+  scrollbar-width: none;
 }
 
 .project-pic {
@@ -768,6 +771,7 @@ body {
   align-items: center;
   justify-content: start;
   background-color: var(--bg-card);
+  overflow: hidden;
 }
 
 .pin {
@@ -818,4 +822,29 @@ body {
   width: 50%;
   color: var(--text-dark);
   text-align: center;
+}
+
+.mobile-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  padding: 20px;
+  color: var(--text-main);
+}
+
+@media screen and (min-width: 1024px) {
+  .mobile-message {
+    display: none;
+  }
+  .wrapper {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .wrapper {
+    display: none;
+  }
 }
