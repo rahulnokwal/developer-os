@@ -838,13 +838,15 @@ body {
   .mobile-message {
     display: none;
   }
-  .wrapper {
+  .wrapper,
+  .desktop-boot {
     display: block;
   }
 }
 
 @media screen and (max-width: 1023px) {
-  .wrapper {
+  .wrapper,
+  .desktop-boot {
     display: none;
   }
 }
